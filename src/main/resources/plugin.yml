@@ -1,6 +1,6 @@
 name: MemeTools
 main: st.northw.MemeTools
-version: 1.0-SNAPSHOT
+version: 1.1-SNAPSHOT
 api-version: 1.13
 author: nwradio
 commands:
