@@ -25,7 +25,7 @@ public class MemeTools extends JavaPlugin {
         getLogger().info("\u001b[34m --------------\u001b[0m");
         getLogger().info(" ");
 
-        getCommand("mt").setExecutor(new MainCommand());
+        getCommand("mt").setExecutor(new MainCommand()); //main command hook
     }
 
     @Override
