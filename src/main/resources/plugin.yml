@@ -1,0 +1,15 @@
+name: MemeTools
+main: st.northw.MemeTools
+version: 1.0-SNAPSHOT
+api-version: 1.13
+author: nwradio
+commands:
+  mt:
+    description: This is the main MemeTools command
+    usage: /mt
+    permission: MemeTools.mt
+    permission-message: You don't have permission to use MemeTools
+
+permissions:
+  MemeTools.*:
+    description: Gives access to all meme commands
