@@ -1,3 +1,5 @@
+//Michael Peters, 2019
+
 package st.northw;
 
 import org.bukkit.Bukkit;
