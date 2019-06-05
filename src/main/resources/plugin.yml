@@ -9,7 +9,11 @@ commands:
     usage: /mt
     permission: MemeTools.mt
     permission-message: You don't have permission to use MemeTools
-
+  chatspam:
+    description: This spams broadcasts to the chat... Use wisely!
+    usage: /chatspam
+    permission: MemeTools.cs
+    permission-message: You don't have permission to use ChatSpam
 permissions:
   MemeTools.*:
     description: Gives access to all meme commands

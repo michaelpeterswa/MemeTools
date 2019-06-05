@@ -26,6 +26,7 @@ public class MemeTools extends JavaPlugin {
         getLogger().info(" ");
 
         getCommand("mt").setExecutor(new MainCommand()); //main command hook
+        getCommand("chatspam").setExecutor(new ChatSpam()); //chat spam command hook
     }
 
     @Override
