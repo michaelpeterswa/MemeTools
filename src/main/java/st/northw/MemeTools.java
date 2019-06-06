@@ -25,8 +25,13 @@ public class MemeTools extends JavaPlugin {
         getLogger().info("\u001b[34m --------------\u001b[0m");
         getLogger().info(" ");
 
+
+        getServer().getPluginManager().registerEvents(new LightningArrowListener(), this);
+
         getCommand("mt").setExecutor(new MainCommand()); //main command hook
         getCommand("chatspam").setExecutor(new ChatSpam()); //chat spam command hook
+        getCommand("lightningbolt").setExecutor(new LightningArrowListener()); //LAL command hook
+
     }
 
     @Override

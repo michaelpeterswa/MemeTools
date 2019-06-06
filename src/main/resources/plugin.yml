@@ -14,6 +14,11 @@ commands:
     usage: /chatspam
     permission: MemeTools.cs
     permission-message: You don't have permission to use ChatSpam
+  lightningbolt:
+    description: lightning bolt arrow!
+    usage: /lightningbolt
+    permission: MemeTools.lb
+    permission-message: You don't have permission to use LightningBolt
 permissions:
   MemeTools.*:
     description: Gives access to all meme commands

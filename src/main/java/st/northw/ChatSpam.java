@@ -12,6 +12,7 @@ import java.util.TimerTask;
 public class ChatSpam implements CommandExecutor {
 
     private boolean chatspam = false;
+    int period = 2000;
     final Timer t = new Timer();
     String mt_prefix = String.format("%s[%smt%s] ", ChatColor.DARK_BLUE, ChatColor.BLUE, ChatColor.DARK_BLUE);
 
@@ -30,26 +31,22 @@ public class ChatSpam implements CommandExecutor {
             message =  ChatColor.WHITE + "This is the default message";
         }
         if (!chatspam){
-            //sender.sendMessage(mt_prefix + ChatColor.WHITE + "chatspam toggled off");
             t.cancel();
             t.purge();
-            //t.cancel(); //IAE, timer already cancelled
-            //chatspam = !chatspam;
         }
         if (chatspam) {
-            sender.sendMessage(mt_prefix + ChatColor.RED + "chatspam toggled on");
+            sender.sendMessage(mt_prefix + ChatColor.GREEN + "chatspam toggled on");
             Timer t = new Timer();
             t.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    Thread.currentThread().setName("ChatSpam");
                     Bukkit.broadcastMessage(mt_prefix + ChatColor.WHITE + message);
                     if(!chatspam){
                         this.cancel();
                         sender.sendMessage(mt_prefix + ChatColor.RED + "chatspam successfully turned off");
                     }
                 }
-            }, 0, 2000);
+            }, 0, period);
 
         }
         return true;
