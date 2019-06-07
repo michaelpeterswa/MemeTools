@@ -1,4 +1,5 @@
 /*
+-------------------------------------------------
    __  ___               ______            __
   /  |/  /___  __ _  ___/_  __/___  ___   / /___
  / /|_/ // -_)/  ' \/ -_)/ /  / _ \/ _ \ / /(_-<
@@ -8,11 +9,16 @@ Michael Peters
 northw.st
 © 2019, All rights reserved.
 
- */
+-------------------------------------------------
+*/
 
 package st.northw;
 
+import javafx.scene.effect.Light;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.logging.Level;
 
 public class MemeTools extends JavaPlugin {
 
@@ -25,7 +31,18 @@ public class MemeTools extends JavaPlugin {
         getLogger().info("\u001b[34m --------------\u001b[0m");
         getLogger().info(" ");
 
-        getCommand("mt").setExecutor(new MainCommand()); //main command hook
+        LightningArrowListener instance = new LightningArrowListener();
+
+        getServer().getPluginManager().registerEvents(instance, this);
+
+        try {
+            getCommand("mt").setExecutor(new MainCommand()); //main command hook
+            getCommand("chatspam").setExecutor(new ChatSpam()); //chat spam command hook
+            getCommand("lightningbolt").setExecutor(instance); //LAL command hook
+        }
+        catch (Exception e) {
+            getLogger().info("command hooks did not initialize properly");
+        }
     }
 
     @Override
