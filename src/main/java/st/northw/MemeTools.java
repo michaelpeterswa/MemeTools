@@ -14,6 +14,7 @@ northw.st
 
 package st.northw;
 
+import javafx.scene.effect.Light;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -30,13 +31,14 @@ public class MemeTools extends JavaPlugin {
         getLogger().info("\u001b[34m --------------\u001b[0m");
         getLogger().info(" ");
 
+        LightningArrowListener instance = new LightningArrowListener();
 
-        getServer().getPluginManager().registerEvents(new LightningArrowListener(), this);
+        getServer().getPluginManager().registerEvents(instance, this);
 
         try {
             getCommand("mt").setExecutor(new MainCommand()); //main command hook
             getCommand("chatspam").setExecutor(new ChatSpam()); //chat spam command hook
-            getCommand("lightningbolt").setExecutor(new LightningArrowListener()); //LAL command hook
+            getCommand("lightningbolt").setExecutor(instance); //LAL command hook
         }
         catch (Exception e) {
             getLogger().info("command hooks did not initialize properly");

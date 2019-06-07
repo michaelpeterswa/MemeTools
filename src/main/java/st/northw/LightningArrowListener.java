@@ -13,7 +13,6 @@ northw.st
 -------------------------------------------------
 */
 
-
 package st.northw;
 
 import org.bukkit.ChatColor;
@@ -29,32 +28,32 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 public class LightningArrowListener implements Listener, CommandExecutor {
 
-    boolean toggleState = false;
+    private boolean toggleState;
     String mt_prefix = String.format("%s[%smt%s] ", ChatColor.DARK_BLUE, ChatColor.BLUE, ChatColor.DARK_BLUE);
 
     @EventHandler
     public void onDamage(EntityDamageByEntityEvent event) {
-        if (event.getDamager() instanceof Player) {
-            Player damager = (Player) event.getDamager();
-            LivingEntity damaged = (LivingEntity) event.getEntity();
-            Player damagedp = (Player) damaged;
-            if(toggleState) {
-                damager.sendMessage(mt_prefix + ChatColor.WHITE + damager.getDisplayName()
-                        + "hit" + damagedp.getDisplayName() + "for" + damaged.getLastDamage());
-            }
-        }
+
+//        if (event.getDamager() instanceof Player) {
+//            Player damager = (Player) event.getDamager();
+//            LivingEntity damaged = (LivingEntity) event.getEntity();
+//            Player damagedp = (Player) damaged;
+//            if (toggleState) {
+//                damager.sendMessage(mt_prefix + ChatColor.WHITE + damager.getDisplayName()
+//                        + " hit " + damagedp.getDisplayName() + " for " + event.getDamage());
+//            }
+//        }
+
         if(event.getDamager() instanceof Arrow){
             final Arrow arrow = (Arrow) event.getDamager();
             Player shoota = (Player) arrow.getShooter();
             World currWorld = shoota.getWorld();
             Location defLocation = event.getEntity().getLocation();
-
             if(shoota instanceof Player){
                 if (toggleState) {
                     currWorld.strikeLightning(defLocation);
                     shoota.sendMessage(mt_prefix + ChatColor.WHITE +
-                            event.getDamager().getName() + "shot" + event.getEntity().getName());
-
+                            shoota.getDisplayName() + " shot " + event.getEntity().getName() + " with lightning");
                 }
             }
 
@@ -64,11 +63,14 @@ public class LightningArrowListener implements Listener, CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         toggleState = !toggleState;
         if(toggleState){
-            commandSender.sendMessage(mt_prefix + ChatColor.GREEN + "toggled on");
+            commandSender.sendMessage(mt_prefix + ChatColor.GREEN + "lightning bolts toggled on");
+            //commandSender.sendMessage(mt_prefix + toggleState);
         }
         else{
-            commandSender.sendMessage(mt_prefix + ChatColor.RED + "toggled off");
+            commandSender.sendMessage(mt_prefix + ChatColor.RED + "lightning bolts toggled off");
+            //commandSender.sendMessage(mt_prefix + toggleState);
         }
         return true;
     }
+
 }
