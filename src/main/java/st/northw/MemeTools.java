@@ -14,11 +14,7 @@ northw.st
 
 package st.northw;
 
-import javafx.scene.effect.Light;
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.logging.Level;
 
 public class MemeTools extends JavaPlugin {
 
@@ -27,7 +23,7 @@ public class MemeTools extends JavaPlugin {
     public void onEnable() {
         getLogger().info(" ");
         getLogger().info("\u001b[34m --------------\u001b[0m");
-        getLogger().info("\u001b[34m MemeTools v1.0\u001b[0m");
+        getLogger().info("\u001b[34m MemeTools v1.2\u001b[0m");
         getLogger().info("\u001b[34m --------------\u001b[0m");
         getLogger().info(" ");
 
