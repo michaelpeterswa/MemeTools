@@ -36,8 +36,8 @@ public class ChatSpam implements CommandExecutor {
 
         if(args.length != 0) {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < args.length; i++) {
-                sb.append(args[i]).append(" ");
+            for (String arg : args) {
+                sb.append(arg).append(" ");
             }
             message = sb.toString().trim();
         }

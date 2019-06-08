@@ -24,7 +24,14 @@ public class MainCommand implements CommandExecutor {
 
     private void intro(CommandSender sender) {
         String mt_prefix = String.format("%s[%smt%s] ", ChatColor.DARK_BLUE, ChatColor.BLUE, ChatColor.DARK_BLUE);
+
+        sender.sendMessage(mt_prefix + ChatColor.WHITE + "-------------------------------");
         sender.sendMessage(mt_prefix + ChatColor.WHITE + "MemeTools for Minecraft Fools");
+        sender.sendMessage(mt_prefix + ChatColor.RED + "/chatspam : spam the chat");
+        sender.sendMessage(mt_prefix + ChatColor.RED + "/lightningbolt : electric arrows");
+        sender.sendMessage(mt_prefix + ChatColor.RED + "/mtbc : simple broadcast");
+        sender.sendMessage(mt_prefix + ChatColor.WHITE + "-------------------------------");
+
     }
 
     public boolean onCommand(final CommandSender sender, Command cmd, String label, String[] args) {

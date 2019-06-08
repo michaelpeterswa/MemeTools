@@ -19,6 +19,11 @@ commands:
     usage: /lightningbolt
     permission: MemeTools.lb
     permission-message: You don't have permission to use LightningBolt
+  mtbc:
+    description: simple broadcast to accompany chatspam
+    usage: /mtbc
+    permission: MemeTools.mtbc
+    permission-message: You don't have permission to use mtbc
 permissions:
   MemeTools.*:
     description: Gives access to all meme commands

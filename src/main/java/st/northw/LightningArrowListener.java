@@ -34,16 +34,6 @@ public class LightningArrowListener implements Listener, CommandExecutor {
     @EventHandler
     public void onDamage(EntityDamageByEntityEvent event) {
 
-//        if (event.getDamager() instanceof Player) {
-//            Player damager = (Player) event.getDamager();
-//            LivingEntity damaged = (LivingEntity) event.getEntity();
-//            Player damagedp = (Player) damaged;
-//            if (toggleState) {
-//                damager.sendMessage(mt_prefix + ChatColor.WHITE + damager.getDisplayName()
-//                        + " hit " + damagedp.getDisplayName() + " for " + event.getDamage());
-//            }
-//        }
-
         if(event.getDamager() instanceof Arrow){
             final Arrow arrow = (Arrow) event.getDamager();
             Player shoota = (Player) arrow.getShooter();
