@@ -12,7 +12,7 @@ northw.st
 -------------------------------------------------
 */
 
-package st.northw;
+package st.northw.memetools;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

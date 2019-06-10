@@ -12,7 +12,7 @@ northw.st
 -------------------------------------------------
 */
 
-package st.northw;
+package st.northw.memetools;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
