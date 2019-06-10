@@ -36,17 +36,17 @@ public class LightningArrowListener implements Listener, CommandExecutor {
 
         if(event.getDamager() instanceof Arrow){
             final Arrow arrow = (Arrow) event.getDamager();
-            Player shoota = (Player) arrow.getShooter();
-            World currWorld = shoota.getWorld();
-            Location defLocation = event.getEntity().getLocation();
-            if(shoota instanceof Player){
+
+            if(arrow.getShooter() instanceof Player){
                 if (toggleState) {
+                    Player shoota = (Player) arrow.getShooter();
+                    World currWorld = shoota.getWorld();
+                    Location defLocation = event.getEntity().getLocation();
                     currWorld.strikeLightning(defLocation);
                     shoota.sendMessage(mt_prefix + ChatColor.WHITE +
                             shoota.getDisplayName() + " shot " + event.getEntity().getName() + " with lightning");
                 }
             }
-
         }
     }
 
